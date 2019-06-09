@@ -7,3 +7,5 @@ curl
 clang
 software-properties-common
 libnotify4
+libnotify-bin
+dbus-x11

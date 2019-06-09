@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#
+# ~/.xinitrc
+#
+# Executed by startx (will start dwm)
+
+## Launch agents
+eval $(/usr/bin/killall ssh-agent; /usr/bin/ssh-agent)
+eval $(/usr/bin/killall gpg-agent; /usr/bin/gpg-agent --daemon)
+
+## Start programs
+dunst -config ~/.config/dunst/dunstrc &
+
+## Keyboard configuration 
+setxkbmap us 
+numlockx on #(disable for laptops)
+
+
+## set background
+bg_file="~/.config/wallpaper/fehbg.png"
+[ -f $bg_file ] && feh --bg-scale $bg_file
+
+
+## Launch dwm with d
+dbus-launch dwm

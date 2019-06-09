@@ -4,13 +4,16 @@
 create_user(){
 
 	useradd -m -s /bin/bash $username
-	$USER_HOME=/home/$username
+	USER_HOME=/home/$username
 
 	mkdir -p $USER_HOME/.config
+	mkdir -p $USER_HOME/.config/dunst/dunstrc
 	mkdir -p $USER_HOME/.local/bin
 
 	cp bashrc.base $USER_HOME/.bashrc
 	cp xinitrc.base $USER_HOME/.xinitrc
+	cp dunstrc.base $USER_HOME/.config/dunst/dunstrc
+	
 }
 
 while getopts ":u:" opt; do

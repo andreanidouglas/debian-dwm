@@ -6,3 +6,4 @@ tzdata
 curl
 clang
 software-properties-common
+libnotify4
